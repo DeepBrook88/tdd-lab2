@@ -18,6 +18,24 @@ public class Rover {
     }
 
     public String inputCommands(String commands) {
+        String[] list = commands.split(",");
+        for (String c : list) {
+            switch (c) {
+                case "f" -> move(true);
+                case "b" -> move(false);
+                default -> System.out.println("Error");
+            }
+        }
         return commands;
+    }
+    private void move(boolean forwards) {
+        int move = forwards ? 1 : -1;
+        switch (heading) {
+            case "N" -> yPos += move;
+            case "S" -> yPos -= move;
+            case "W" -> xPos -= move;
+            case "E" -> xPos += move;
+            default -> System.out.println("Error");
+        }
     }
 }

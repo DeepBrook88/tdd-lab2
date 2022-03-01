@@ -21,4 +21,9 @@ class RoverTest {
     void inputCommands() {
         assertEquals("f,l,f,l,f,l,f,l",rover.inputCommands("f,l,f,l,f,l,f,l"));
     }
+    @Test
+    void moveForwardsAndBackwards() {
+        rover.inputCommands("f,f,b");
+        assertEquals("(0,1)(N)", rover.getPos());
+    }
 }
