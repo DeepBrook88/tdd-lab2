@@ -1,5 +1,7 @@
 package ax.ha.it.tdd.marsrover;
 
+import java.util.Arrays;
+
 public class Rover {
     private int xPos;
     private int yPos;
@@ -13,5 +15,9 @@ public class Rover {
 
     public String getPos() {
         return "(" + xPos + "," + yPos + ")" + "(" + heading + ")";
+    }
+
+    public String inputCommands(String commands) {
+        return commands;
     }
 }

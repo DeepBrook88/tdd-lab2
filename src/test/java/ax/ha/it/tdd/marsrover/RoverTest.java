@@ -17,4 +17,8 @@ class RoverTest {
     void getRoverPos() {
         assertEquals("(0,0)(N)",rover.getPos());
     }
+    @Test
+    void inputCommands() {
+        assertEquals("f,l,f,l,f,l,f,l",rover.inputCommands("f,l,f,l,f,l,f,l"));
+    }
 }
