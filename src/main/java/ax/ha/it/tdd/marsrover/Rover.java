@@ -1,6 +1,9 @@
 package ax.ha.it.tdd.marsrover;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Rover {
     private int xPos;
@@ -23,6 +26,8 @@ public class Rover {
             switch (c) {
                 case "f" -> move(true);
                 case "b" -> move(false);
+                case "l" -> rotate(true);
+                case "r" -> rotate(false);
                 default -> System.out.println("Error");
             }
         }
@@ -37,5 +42,13 @@ public class Rover {
             case "E" -> xPos += move;
             default -> System.out.println("Error");
         }
+    }
+    private void rotate(boolean left) {
+        int rotation = left ? -1 : 1;
+        List<String> headings = new ArrayList<>(Arrays.asList("N","E","S","W"));
+        heading = headings.get(mod(headings.indexOf(heading) + rotation,headings.size()));
+    }
+    private int mod(int a, int b) {
+        return (((a%b)+b)%b);
     }
 }

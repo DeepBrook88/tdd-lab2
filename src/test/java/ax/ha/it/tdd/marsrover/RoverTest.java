@@ -26,4 +26,14 @@ class RoverTest {
         rover.inputCommands("f,f,b");
         assertEquals("(0,1)(N)", rover.getPos());
     }
+    @Test
+    void rotateLeft() {
+        rover.inputCommands("l,l");
+        assertEquals("(0,0)(S)", rover.getPos());
+    }
+    @Test
+    void rotateRight() {
+        rover.inputCommands("r");
+        assertEquals("(0,0)(E)", rover.getPos());
+    }
 }
