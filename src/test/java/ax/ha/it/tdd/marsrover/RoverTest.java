@@ -41,4 +41,9 @@ class RoverTest {
         rover.inputCommands("l,f,f");
         assertEquals("(4,0)(W)",rover.getPos());
     }
+    @Test
+    void wrapYAxis() {
+        rover.inputCommands("f,f,f,f,f,f,f");
+        assertEquals("(0,1)(N)",rover.getPos());
+    }
 }

@@ -43,6 +43,7 @@ public class Rover {
             default -> System.out.println("Error");
         }
         xPos = mod(xPos, 6);
+        yPos = mod(yPos, 6);
     }
     private void rotate(boolean left) {
         int rotation = left ? -1 : 1;
