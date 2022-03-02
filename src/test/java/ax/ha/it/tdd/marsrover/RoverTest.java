@@ -36,4 +36,9 @@ class RoverTest {
         rover.inputCommands("r");
         assertEquals("(0,0)(E)", rover.getPos());
     }
+    @Test
+    void wrapXAxis() {
+        rover.inputCommands("l,f,f");
+        assertEquals("(4,0)(W)",rover.getPos());
+    }
 }
